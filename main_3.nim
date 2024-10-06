@@ -5,7 +5,11 @@ var text = """English texts for b3ginners to practice read7ng and comprehension 
 # Ниже произведите действия над переменной text
 var schars, counter, numbers: int
 
+schars = findAll(text, re"[.,\\\s&|;:!?-]").len #находим все количество вхождений специальных символов
 
+counter = findAll(text, re"a").len #находим количество вхождений буквы а
+
+numbers = findAll(text, re"\d", 0).join().parseInt() #находим все числа 
 
 # Не изменяйте код ниже
 doAssert schars == 57

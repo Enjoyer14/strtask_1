@@ -5,7 +5,19 @@ const RootDir = "folder"
 # Ниже реализуйте требуемую задачу
 var dirs, files, exts: seq[string]
 
+#получаем список директорий
+let buffDirs = getDirs(RootDir)
 
+#заменяем все пробелы в директориях на _
+for dir in buffDirs:
+  dirs.add(dir.replace(" ", "_"))
+
+#получаем список файлов
+files = getFiles(RootDir)
+
+#сохраняем все расширения
+for file in files:
+  exts.add(file.splitFile().ext)
 
 # Не изменяйте код ниже
 import sets
