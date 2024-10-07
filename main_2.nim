@@ -5,7 +5,17 @@ const RootDir = "folder"
 # Ниже реализуйте требуемую задачу
 var dirs, files, exts: seq[string]
 
+#получаем список директорий
+let buffDirs = getDirs(RootDir)
 
+#заменяем все пробелы в директориях на _
+dirs = buffDirs.mapIt(it.replace(" ", "_"))
+
+#получаем список файлов
+files = getFiles(RootDir)
+
+
+exts = files.mapIt(it.splitFile().ext)
 
 # Не изменяйте код ниже
 import sets
